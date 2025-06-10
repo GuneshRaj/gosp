@@ -71,8 +71,8 @@ my-project/
 ├── main.go                     # Framework source code
 ├── go.mod                      # Go dependencies
 ├── routes.xml                  # Route configuration
-├── webframework               # Development binary
-├── webframework-compiled      # Production binary (after compilation)
+├── gosp                        # Development binary
+├── gosp-compiled               # Production binary (after compilation)
 │
 └── root_http/                 # Web root directory
     ├── index.html            # Homepage (/)
@@ -188,19 +188,19 @@ Create a `routes.xml` file to customize URL routing and HTTP method restrictions
 ### Development Mode
 ```bash
 # Basic server
-./webframework --root ./root_http --port 8080
+./gosp --root ./root_http --port 8080
 
 # With live reload
-./webframework --root ./root_http --port 8080 --watch
+./gosp --root ./root_http --port 8080 --watch
 
 # Custom config
-./webframework --root ./web --config custom-routes.xml --port 3000 --watch
+./gosp --root ./web --config custom-routes.xml --port 3000 --watch
 ```
 
 ### Production Compilation
 ```bash
 # Compile templates into standalone binary
-./webframework compile --root ./root_http --config routes.xml --output my-app
+./gosp compile --root ./root_http --config routes.xml --output my-app
 
 # Run compiled binary (no external files needed!)
 ./my-app --port 8080
@@ -288,7 +288,7 @@ Create a `routes.xml` file to customize URL routing and HTTP method restrictions
 - Perfect for development and debugging
 
 ```bash
-./webframework --root ./root_http --port 8080 --watch
+./gosp --root ./root_http --port 8080 --watch
 ```
 
 ### 🚀 Production Mode
@@ -298,7 +298,7 @@ Create a `routes.xml` file to customize URL routing and HTTP method restrictions
 
 ```bash
 # Compile
-./webframework compile --root ./root_http --output my-app
+./gosp compile --root ./root_http --output my-app
 
 # Deploy single binary anywhere
 ./my-app --port 8080
