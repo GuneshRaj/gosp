@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <route path="/" file="index.html">
+        <methods>GET</methods>
+    </route>
+    
+    <route path="/htest" file="home/test.html">
+        <methods>GET</methods>
+    </route>
+
+</routes>

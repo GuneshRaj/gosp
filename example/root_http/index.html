@@ -1,0 +1,34 @@
+<!-- root_http/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to GOSP Web Framework</title>
+</head>
+<body>
+    <%@include file="includes/header.html" %>
+    
+    <h1>Welcome to the GoLang Web Framework</h1>
+    
+    <% greeting = "Hello, World!" %>
+    <% userName = "Guest" %>
+    
+    <p><%= greeting %></p>
+    <p>Current user: <%= userName %></p>
+    
+    <p>Request Method: <%= request.method %></p>
+    <p>Request URL: <%= request.url %></p>
+    <p>Current Time: <%= "2024-01-01" %></p>
+    
+    <% if (query.name) { %>
+        <p>Hello, <%= query.name %>!</p>
+    <% } %>
+    
+    <form method="POST" action="/contact">
+        <input type="text" name="name" placeholder="Your name">
+        <input type="email" name="email" placeholder="Your email">
+        <button type="submit">Submit</button>
+    </form>
+    
+    <%@include file="includes/footer.html" %>
+</body>
+</html>
